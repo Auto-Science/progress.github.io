@@ -13,7 +13,7 @@
 
 完整工作区：https://boston-autoscience-progress.authenticcheetah16.chatgpt.site
 
-GitHub Pages 仅发布 `pages/` 中的入口，跳转至支持共享数据库的完整工作区。请在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，再运行 `Publish workspace entry`。
+GitHub Pages 根目录与 `pages/` 均提供跳转入口，跳转至支持共享数据库的完整工作区。请在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，再运行 `Publish workspace entry`。
 
 目前托管站点保持私有。站点所有者可在 Sites 的访问设置中调整为公开；公开入口后仍需工作区密码才能读取共享数据。公开访问设置由所有者自行处理。
 
@@ -31,7 +31,7 @@ npm run build
 `worker/api.mjs` 为接口；`scripts/build.mjs` 将页面和静态资源打包为 Worker；`drizzle/` 包含数据库迁移。
 `.openai/hosting.json` 保留已配置的站点 ID 和 D1 绑定。
 
-GitHub Pages 无法运行服务端接口，因此不要直接发布根目录作为完整应用。
+GitHub Pages 无法运行服务端接口，根目录 index.html 是跳转入口；workspace.html 是 Worker 打包时使用的完整应用页面。
 
 ## 数据
 
